@@ -10,6 +10,14 @@ class Topic extends Model
 
     protected $fillable = ['title', 'body',  'category_id', 'excerpt', 'slug'];
 
+
+    public function relies()
+    {
+        return $this->hasMany(Rely::class);
+    }
+
+
+
     public function category()
     {
         return $this -> belongsTo(Category::class);
